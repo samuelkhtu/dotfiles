@@ -9,7 +9,7 @@ fi
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/stu/.oh-my-zsh"
+export ZSH=".oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -111,10 +111,10 @@ alias dir='ls'
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# function to setup aws environment
-function aaws(){
-  /Users/stu/opt/miniconda3/envs/aws/bin/python ~/dv/env/aws/aws_setup.py
-}
+# # function to setup aws environment
+# function aaws(){
+#   /Users/stu/opt/miniconda3/envs/aws/bin/python ~/dv/env/aws/aws_setup.py
+# }
 
 function cd() {
   builtin cd "$@"
@@ -160,10 +160,10 @@ function dvpy(){
 }
 
 
-function dvair(){
- echo 'go Airflow folder'
- cd ~/dv/py/airflow
-}
+# function dvair(){
+#  echo 'go Airflow folder'
+#  cd ~/dv/py/airflow
+# }
 
 function virc(){
  echo 'edit .zshrc'
@@ -172,19 +172,19 @@ function virc(){
 export PATH="/usr/local/opt/gnu-getopt/bin:$PATH"
 # START: Added by Airflow Breeze autocomplete setup
 autoload compinit && compinit
-autoload bashcompinit && bashcompinit
-source ~/.bash_completion.d/breeze-complete
+# autoload bashcompinit && bashcompinit
+# source ~/.bash_completion.d/breeze-complete
 # END: Added by Airflow Breeze autocomplete setup
 
 
 # Setup Airflow dev dependencies
-export LDFLAGS="-L/usr/local/opt/openssl/lib"
-export CPPFLAGS="-I/usr/local/opt/openssl/include"
+# export LDFLAGS="-L/usr/local/opt/openssl/lib"
+# export CPPFLAGS="-I/usr/local/opt/openssl/include"
 
-# Pi connection
-function pi-m(){
- ssh -i ~/.ssh/pi_master_id_rsa -p 222 stu@192.168.1.48   
-}
+# # Pi connection
+# function pi-m(){
+#  ssh -i ~/.ssh/pi_master_id_rsa -p 222 stu@192.168.1.48   
+# }
 
 # Pyenv Configuration
 alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'
