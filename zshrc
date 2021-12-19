@@ -9,12 +9,13 @@ fi
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/samueltu/.oh-my-zsh"
+export ZSH="/Users/stu/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+#ZSH_THEME="robbyrussell"
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Set list of themes to pick from when loading at random
@@ -30,13 +31,14 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Case-sensitive completion must be off. _ and - will be interchangeable.
 # HYPHEN_INSENSITIVE="true"
 
-# Uncomment one of the following lines to change the auto-update behavior
-# zstyle ':omz:update' mode disabled  # disable automatic updates
-# zstyle ':omz:update' mode auto      # update automatically without asking
-# zstyle ':omz:update' mode reminder  # just remind me to update when it's time
+# Uncomment the following line to disable bi-weekly auto-update checks.
+# DISABLE_AUTO_UPDATE="true"
+
+# Uncomment the following line to automatically update without prompting.
+# DISABLE_UPDATE_PROMPT="true"
 
 # Uncomment the following line to change how often to auto-update (in days).
-# zstyle ':omz:update' frequency 13
+# export UPDATE_ZSH_DAYS=13
 
 # Uncomment the following line if pasting URLs and other text is messed up.
 # DISABLE_MAGIC_FUNCTIONS="true"
@@ -51,9 +53,6 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
-# You can also set it to another string to have that shown instead of the default red dots.
-# e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
-# Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
 # COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
@@ -106,13 +105,16 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
-# pyenv
-eval "$(pyenv init -)"
+#alias aws='docker run --rm -ti -v ~/.aws:/root/.aws -v $(pwd):/aws amazon/aws-cli'
+alias dir='ls'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+# function to setup aws environment
+function aaws(){
+  /Users/stu/opt/miniconda3/envs/aws/bin/python ~/dv/env/aws/aws_setup.py
+}
 
 function cd() {
   builtin cd "$@"
@@ -143,5 +145,53 @@ function cd() {
   fi
 }
 
+function ss(){
+ echo 'source .zshrc'
+ source ~/.zshrc
+}
 
+function dv(){
+ cd ~/dv
+}
+
+function dvpy(){
+ echo 'go py'
+ cd ~/dv/py
+}
+
+
+function dvair(){
+ echo 'go Airflow folder'
+ cd ~/dv/py/airflow
+}
+
+function virc(){
+ echo 'edit .zshrc'
+ vi ~/.zshrc
+}
+export PATH="/usr/local/opt/gnu-getopt/bin:$PATH"
+# START: Added by Airflow Breeze autocomplete setup
+autoload compinit && compinit
+autoload bashcompinit && bashcompinit
+source ~/.bash_completion.d/breeze-complete
+# END: Added by Airflow Breeze autocomplete setup
+
+
+# Setup Airflow dev dependencies
+export LDFLAGS="-L/usr/local/opt/openssl/lib"
+export CPPFLAGS="-I/usr/local/opt/openssl/include"
+
+# Pi connection
+function pi-m(){
+ ssh -i ~/.ssh/pi_master_id_rsa -p 222 stu@192.168.1.48   
+}
+
+# Pyenv Configuration
+alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'
 eval "$(pyenv init -)"
+
+# Setup VIM Environment Variables
+
+
+
+
