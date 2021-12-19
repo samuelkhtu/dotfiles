@@ -15,7 +15,7 @@ Plug 'https://github.com/preservim/nerdtree' "Nerd tree
 Plug 'https://github.com/tpope/vim-commentary' "For commenting gcc & gc
 Plug 'neoclide/coc.nvim', {'branch': 'release'} "Auto complete
 Plug 'https://github.com/ryanoasis/vim-devicons' "Dev Icon
-
+" Plug 'https://github.com/ctrlpvim/ctrlp.vim' "Ctrl P Open File
 
 " Plug 'https://github.com/tc50cal/vim-terminal' "vim terminal
 
