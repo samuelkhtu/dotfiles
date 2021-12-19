@@ -5,6 +5,9 @@
 - clean: ['~']
 
 - link:
+    ~/.dotfiles:
+        path: ~/dv/dotfiles
+        create: true
     ~/.gitconfig: gitconfig
     ~/.ssh/config:
         path: ssh/config
