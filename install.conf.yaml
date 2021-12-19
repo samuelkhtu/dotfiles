@@ -16,6 +16,7 @@
         create: true
     ~/.oh-my-zsh: oh-my-zsh
     ~/.oh-my-zsh/custom/themes/powerlevel10k: powerlevel10k
+    ~/.p10k.zsh: p10k.zsh
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
