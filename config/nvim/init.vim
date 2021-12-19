@@ -14,13 +14,16 @@ Plug 'https://github.com/vim-airline/vim-airline-themes' "Airline theme
 Plug 'https://github.com/preservim/nerdtree' "Nerd tree
 Plug 'https://github.com/tpope/vim-commentary' "For commenting gcc & gc
 Plug 'neoclide/coc.nvim', {'branch': 'release'} "Auto complete
+Plug 'https://github.com/ryanoasis/vim-devicons' "Dev Icon
 
 
 " Plug 'https://github.com/tc50cal/vim-terminal' "vim terminal
 
-let g:coc_global_extensions = ['coc-json', 'coc-git']
-
 call plug#end()
+
+let g:coc_global_extensions = ['coc-json', 'coc-git', 'coc-jedi']
 
 let g:airline_theme='base16'
 let g:airline_powerline_fonts = 1
+
+set encoding=utf8
