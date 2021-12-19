@@ -1,3 +1,7 @@
+- defaults:
+    link:
+      relink: true
+
 - clean: ['~']
 
 - link:
@@ -7,5 +11,11 @@
         create: true
     ~/.zprofile: zprofile
     ~/.zshrc: zshrc
+    ~/.config/nvim/init.vim:
+        path: config/nvim/init.vim
+        create: true
+    ~/.oh-my-zsh: oh-my-zsh
+    ~/.oh-my-zsh/custom/themes/powerlevel10k: powerlevel10k
 
-
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]
