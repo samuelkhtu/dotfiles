@@ -190,8 +190,10 @@ autoload compinit && compinit
 alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'
 eval "$(pyenv init -)"
 
-# Setup VIM Environment Variables
-
+# Alias - Redirect stderr 2 to stdout &1
+if type nvim > /dev/null 2>&1; then
+  alias vim='nvim'
+fi
 
 
 
