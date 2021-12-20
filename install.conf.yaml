@@ -17,6 +17,9 @@
     ~/.config/nvim/init.vim:
         path: config/nvim/init.vim
         create: true
+    ~/.config/nvim/plugins:
+        path: config/nvim/plugins
+        create: true
     ~/.oh-my-zsh: oh-my-zsh
     ~/.oh-my-zsh/custom/themes/powerlevel10k: powerlevel10k
     ~/.p10k.zsh: p10k.zsh

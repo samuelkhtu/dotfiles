@@ -114,7 +114,7 @@ source ~/.config/nvim/plugins/commentary.vim " Comment with gcc & gc command
 
 call plug#end()
 
-"doautocmd User PlugLoaded
+doautocmd User PlugLoaded
 
 " ------------------ Auto-complete Plug-in Config -----------------
 " let g:coc_global_extensions = ['coc-json', 'coc-git', 'coc-jedi']
@@ -125,4 +125,5 @@ call plug#end()
 " let g:airline_theme='bubblegum'
 " let g:airline_powerline_fonts = 1
 
+colorscheme vscode
 
