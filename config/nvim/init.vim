@@ -103,7 +103,7 @@ source ~/.config/nvim/plugins/airline.vim
 source ~/.config/nvim/plugins/vscode.vim
 source ~/.config/nvim/plugins/nerdtree.vim
 source ~/.config/nvim/plugins/commentary.vim " Comment with gcc & gc command
-
+source ~/.config/nvim/plugins/fzf.vim
 " Plug 'neoclide/coc.nvim', {'branch': 'release'} "Auto complete
 
 " Plug 'https://github.com/ctrlpvim/ctrlp.vim' "Ctrl P Open File
