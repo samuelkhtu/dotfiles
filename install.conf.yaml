@@ -20,6 +20,9 @@
     ~/.config/nvim/plugins:
         path: config/nvim/plugins
         create: true
+    ~/.config/i3/config:
+        path: config/i3/config
+        create: true
     ~/.oh-my-zsh: oh-my-zsh
     ~/.oh-my-zsh/custom/themes/powerlevel10k: powerlevel10k
     ~/.p10k.zsh: p10k.zsh
