@@ -104,9 +104,8 @@ source ~/.config/nvim/plugins/vscode.vim
 source ~/.config/nvim/plugins/nerdtree.vim
 source ~/.config/nvim/plugins/commentary.vim " Comment with gcc & gc command
 source ~/.config/nvim/plugins/fzf.vim
-" Plug 'neoclide/coc.nvim', {'branch': 'release'} "Auto complete
-
-" Plug 'https://github.com/ctrlpvim/ctrlp.vim' "Ctrl P Open File
+source ~/.config/nvim/plugins/coc.vim
+source ~/.config/nvim/plugins/floatterm.vim
 
 
 " dev icon has to be last plugin
@@ -116,14 +115,10 @@ call plug#end()
 
 doautocmd User PlugLoaded
 
-" ------------------ Auto-complete Plug-in Config -----------------
-" let g:coc_global_extensions = ['coc-json', 'coc-git', 'coc-jedi']
 
 " -------------- Airline Status Bar Configuration -----------------
 " let g:airline#extensions#tabline#enabled = 1 " Enable the list of buffers
 
-" let g:airline_theme='bubblegum'
-" let g:airline_powerline_fonts = 1
 
 colorscheme vscode
 
