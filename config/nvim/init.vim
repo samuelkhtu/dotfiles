@@ -106,6 +106,8 @@ source ~/.config/nvim/plugins/commentary.vim " Comment with gcc & gc command
 source ~/.config/nvim/plugins/fzf.vim
 source ~/.config/nvim/plugins/coc.vim
 source ~/.config/nvim/plugins/floatterm.vim
+source ~/.config/nvim/plugins/which-key.vim
+
 
 
 " dev icon has to be last plugin
