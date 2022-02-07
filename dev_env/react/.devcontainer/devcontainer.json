@@ -1,0 +1,79 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.217.1/containers/javascript-node
+{
+	"name": "Node.js",
+	"build": {
+		"dockerfile": "Dockerfile",
+		// Update 'VARIANT' to pick a Node version: 16, 14, 12.
+		// Append -bullseye or -buster to pin to an OS version.
+		// Use -bullseye variants on local arm64/Apple Silicon.
+		"args": { "VARIANT": "16" }
+	},
+
+	// Set *default* container specific settings.json values on container create.
+	"settings": {
+		"terminal.integrated.profiles.linux": {
+			"bash": {
+				"path": "bash",
+				"icon": "terminal-bash"
+			},
+			"zsh": {
+				"path": "bin/zsh"
+			},
+			"fish": {
+				"path": "fish"
+			},
+			"tmux": {
+				"path": "tmux",
+				"icon": "terminal-tmux"
+			},
+			"pwsh": {
+				"path": "pwsh",
+				"icon": "terminal-powershell"
+			}
+		},
+		"terminal.integrated.defaultProfile.linux": "zsh (2)",
+		"editor.fontFamily": "Operator Mono Lig, Menlo, Monaco, 'Courier New', monospace",
+		"editor.fontLigatures": true,
+		"explorer.compactFolders": false
+		
+		
+	},
+
+	// Add the IDs of extensions you want installed when the container is created.
+	"extensions": [
+		"dbaeumer.vscode-eslint",
+		"ms-azuretools.vscode-docker",
+		"dsznajder.es7-react-js-snippets",
+		"2gua.rainbow-brackets",
+		"xabikos.ReactSnippets",
+		"aaronthomas.vscode-snazzy-operator",
+		"MaxfieldWalker.vscode-color-theme-spirited-away",
+		"vscode-icons-team.vscode-icons",
+		"styled-components.vscode-styled-components",
+		"formulahendry.auto-close-tag",
+		"formulahendry.auto-rename-tag",
+		"mgmcdermott.vscode-language-babel",
+		"gerane.Theme-Bittersweet",
+		"GraphQL.vscode-graphql",
+		"mquandalle.graphql",
+		"yzhang.markdown-all-in-one",
+		"christian-kohler.path-intellisense",
+		"esbenp.prettier-vscode"
+	],
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	"forwardPorts": [3000],
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	// "postCreateCommand": "yarn install",
+	"postCreateCommand": "npm install",
+
+	"containerEnv": {"CHOKIDIR_USEPOLLING":"true"},
+
+	// Comment out to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
+	// "remoteUser": "node",
+	"features": {
+		"github-cli": "latest"
+	}
+}

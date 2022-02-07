@@ -54,7 +54,7 @@ vnoremap < <gv
 vnoremap > >gv
 
 " Maintain the cursor position when yanking a visual selection
-" http://ddrscott.github.io/blog/2016/yank-without-jank/
+" http://ddrscott.github.io/blog/2016/yank-without-janK/
 vnoremap y myy`y
 vnoremap Y myY`y
 
@@ -86,6 +86,25 @@ imap ,, <Esc>A,<Esc>
 cmap w!! %!sudo tee > /dev/null %
 
 "--------------------------------------------------------------------------
+" Miscellaneous
+"--------------------------------------------------------------------------
+
+" Create any required directories when saving
+function s:CreateMissingDirectories(file, buf)
+    if empty(getbufvar(a:buf, '&buftype')) && a:file!~#'\v^\w+\:\/'
+        let dir=fnamemodify(a:file, ':h')
+        if !isdirectory(dir)
+            call mkdir(dir, 'p')
+        endif
+    endif
+endfunction
+
+augroup CreateMissingDirectories
+    autocmd!
+    autocmd BufWritePre * :call s:CreateMissingDirectories(expand('<afile>'), +expand('<abuf>'))
+augroup END
+
+"--------------------------------------------------------------------------
 " Plugins
 "--------------------------------------------------------------------------
 
@@ -107,6 +126,7 @@ source ~/.config/nvim/plugins/fzf.vim
 source ~/.config/nvim/plugins/coc.vim
 source ~/.config/nvim/plugins/floatterm.vim
 source ~/.config/nvim/plugins/which-key.vim
+source ~/.config/nvim/plugins/markdown-preview.vim
 
 
 
