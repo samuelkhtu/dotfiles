@@ -189,11 +189,13 @@ autoload compinit && compinit
 # Pyenv Configuration
 alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'
 eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
 
 # Alias - Redirect stderr 2 to stdout &1
 if type nvim > /dev/null 2>&1; then
   alias vim='nvim'
 fi
 
-
+# Set Path to Mongo db
+export PATH="/Users/stu/dv/tools/mongodb/bin:$PATH"
 
